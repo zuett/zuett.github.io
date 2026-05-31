@@ -1,0 +1,16 @@
+<svg width="1280" height="900" viewBox="0 0 1280 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="900" fill="#0c0f14"/>
+  <rect x="78" y="78" width="1124" height="744" rx="48" fill="#151922" stroke="#2c3443" stroke-width="3"/>
+  <circle cx="310" cy="590" r="82" fill="#202938" stroke="#7dd3fc" stroke-width="6"/>
+  <circle cx="530" cy="455" r="72" fill="#202938" stroke="#a78bfa" stroke-width="6"/>
+  <circle cx="744" cy="348" r="58" fill="#202938" stroke="#f472b6" stroke-width="6"/>
+  <path d="M374 548L472 496" stroke="#e5e7eb" stroke-width="54" stroke-linecap="round"/>
+  <path d="M590 422L690 374" stroke="#e5e7eb" stroke-width="48" stroke-linecap="round"/>
+  <path d="M792 332L900 302" stroke="#e5e7eb" stroke-width="38" stroke-linecap="round"/>
+  <rect x="900" y="252" width="158" height="108" rx="26" fill="#232b38" stroke="#7dd3fc" stroke-width="5"/>
+  <path d="M1058 306H1130" stroke="#f8fafc" stroke-width="18" stroke-linecap="round"/>
+  <path d="M1128 276L1180 250M1128 336L1180 362" stroke="#f8fafc" stroke-width="15" stroke-linecap="round"/>
+  <rect x="184" y="670" width="295" height="46" rx="23" fill="#252d3a" stroke="#3d4655"/>
+  <text x="640" y="735" text-anchor="middle" fill="#f7f7fb" font-family="Inter, Arial, sans-serif" font-size="76" font-weight="900">UR20 Attachement Prototype</text>
+  <text x="640" y="790" text-anchor="middle" fill="#c6c6d2" font-family="Inter, Arial, sans-serif" font-size="28">robotics end-effector concept placeholder</text>
+</svg>

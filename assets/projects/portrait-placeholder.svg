@@ -1,0 +1,23 @@
+<svg width="1280" height="900" viewBox="0 0 1280 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="900" fill="#101018"/>
+  <rect x="78" y="78" width="1124" height="744" rx="48" fill="#171720" stroke="#2d2d3a" stroke-width="3"/>
+  <circle cx="610" cy="300" r="118" stroke="#7dd3fc" stroke-width="5" stroke-dasharray="10 16"/>
+  <path d="M454 640C470 522 520 448 610 448C700 448 750 522 766 640" stroke="#a78bfa" stroke-width="8" stroke-linecap="round"/>
+  <g fill="#f472b6">
+    <circle cx="566" cy="288" r="11"/>
+    <circle cx="654" cy="288" r="11"/>
+    <circle cx="610" cy="328" r="9"/>
+    <circle cx="574" cy="356" r="7"/>
+    <circle cx="646" cy="356" r="7"/>
+  </g>
+  <path d="M360 215L270 165L240 260L330 310L360 215Z" fill="#38bdf8" fill-opacity="0.32" stroke="#38bdf8" stroke-width="4"/>
+  <path d="M920 210L1030 170L1070 280L954 326L920 210Z" fill="#f472b6" fill-opacity="0.28" stroke="#f472b6" stroke-width="4"/>
+  <rect x="838" y="478" width="230" height="48" rx="24" fill="#252533" stroke="#55556b"/>
+  <rect x="838" y="550" width="230" height="48" rx="24" fill="#252533" stroke="#55556b"/>
+  <rect x="838" y="622" width="230" height="48" rx="24" fill="#252533" stroke="#55556b"/>
+  <circle cx="1040" cy="502" r="20" fill="#38bdf8"/>
+  <circle cx="1040" cy="574" r="20" fill="#a78bfa"/>
+  <circle cx="1040" cy="646" r="20" fill="#f472b6"/>
+  <text x="640" y="735" text-anchor="middle" fill="#f7f7fb" font-family="Inter, Arial, sans-serif" font-size="66" font-weight="900">Interactive ML Portrait Builder</text>
+  <text x="640" y="790" text-anchor="middle" fill="#c6c6d2" font-family="Inter, Arial, sans-serif" font-size="28">p5.js + ml5.js generative webcam layers</text>
+</svg>

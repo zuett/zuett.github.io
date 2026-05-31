@@ -1,0 +1,29 @@
+<svg width="1280" height="900" viewBox="0 0 1280 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="900" fill="#08080d"/>
+  <rect x="70" y="70" width="1140" height="760" rx="54" fill="#111118" stroke="#2b2b38" stroke-width="3"/>
+  <circle cx="170" cy="170" r="48" fill="url(#lens)"/>
+  <path d="M250 446C370 230 521 691 640 452C760 210 913 669 1030 436" stroke="url(#wave)" stroke-width="8" stroke-linecap="round"/>
+  <g opacity="0.38">
+    <rect x="145" y="580" width="64" height="150" rx="32" fill="#fff"/>
+    <rect x="230" y="520" width="64" height="210" rx="32" fill="#fff"/>
+    <rect x="315" y="610" width="64" height="120" rx="32" fill="#fff"/>
+    <rect x="900" y="500" width="64" height="230" rx="32" fill="#fff"/>
+    <rect x="985" y="565" width="64" height="165" rx="32" fill="#fff"/>
+    <rect x="1070" y="620" width="64" height="110" rx="32" fill="#fff"/>
+  </g>
+  <text x="640" y="390" text-anchor="middle" fill="#f7f7fb" font-family="Inter, Arial, sans-serif" font-size="118" font-weight="900">V!Real(ity)</text>
+  <text x="640" y="476" text-anchor="middle" fill="#f7f7fb" font-family="Georgia, serif" font-size="54">The lie you believed</text>
+  <text x="640" y="560" text-anchor="middle" fill="#c6c6d2" font-family="Inter, Arial, sans-serif" font-size="29">room-scale perception installation</text>
+  <defs>
+    <radialGradient id="lens" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(158 156) rotate(52) scale(90)">
+      <stop stop-color="#ffe8fb"/>
+      <stop offset="0.46" stop-color="#b285ff"/>
+      <stop offset="1" stop-color="#6ee7f9"/>
+    </radialGradient>
+    <linearGradient id="wave" x1="250" y1="446" x2="1030" y2="436" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f472b6"/>
+      <stop offset="0.5" stop-color="#a78bfa"/>
+      <stop offset="1" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+</svg>
