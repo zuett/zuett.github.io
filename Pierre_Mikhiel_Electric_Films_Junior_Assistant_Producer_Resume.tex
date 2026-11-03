@@ -1,0 +1,179 @@
+\documentclass[letterpaper,10pt]{article}
+
+% ── Packages ──────────────────────────────────────────────────────────────────
+\usepackage[empty]{fullpage}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{calc}
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{xifthen}
+\usepackage{microtype}
+
+% ── Page geometry ─────────────────────────────────────────────────────────────
+\pagestyle{empty}
+\addtolength{\oddsidemargin}{-0.55in}
+\addtolength{\evensidemargin}{-0.55in}
+\addtolength{\textwidth}{1.1in}
+\addtolength{\topmargin}{-.75in}
+\addtolength{\textheight}{1.5in}
+
+% ── Section title style ───────────────────────────────────────────────────────
+\titleformat{\section}{\normalsize\bfseries\uppercase}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{5pt}{2pt}
+
+% ── List spacing ──────────────────────────────────────────────────────────────
+\setlist[itemize]{leftmargin=*, noitemsep, topsep=1pt, partopsep=0pt, parsep=0pt}
+
+% ── Fixed-width column label for productions table ────────────────────────────
+\newlength{\prodlabelwidth}
+\setlength{\prodlabelwidth}{90pt}
+
+% ── Role entry: {COMPANY}{optional subtitle}{date} ───────────────────────────
+\newcommand{\roleentry}[3]{%
+  \noindent\textbf{#1}\hfill\textit{#3}%
+  \ifthenelse{\isempty{#2}}{\\[-4pt]}{\\[-1pt]\textit{#2}\\[-4pt]}%
+}
+
+\begin{document}
+
+% ══════════════════════════════════════════════════════════════════════════════
+%  HEADER
+% ══════════════════════════════════════════════════════════════════════════════
+\begin{center}
+  {\LARGE\textbf{PIERRE MIKHIEL}}\\[3pt]
+  Junior Assistant Producer \textbar\ Production Coordinator\\[2pt]
+  {\small
+    Abu Dhabi, UAE \textbar\ Available in Dubai \textbar\
+    +971 55 984 5520 \textbar\
+    \href{mailto:pmk2057@nyu.edu}{pmk2057@nyu.edu} \textbar\
+    \href{https://pierremikhiel.com}{pierremikhiel.com}
+  }
+\end{center}
+
+\vspace{2pt}
+
+% ══════════════════════════════════════════════════════════════════════════════
+%  EDUCATION
+% ══════════════════════════════════════════════════════════════════════════════
+\section{Education}
+
+\noindent\textbf{NEW YORK UNIVERSITY ABU DHABI}\hfill May 2026\\
+B.A.\ Interactive Media, Cum Laude \textbar\ Minors: Film \& New Media, Computer Science\\
+\textit{Relevant coursework:} Introduction to Media Industries and Institutions; Techniques for Safety and Production; Principles of Post-Production for Film and Video; Production Sound for Film and New Media; Concepts of Film and New Media
+
+% ══════════════════════════════════════════════════════════════════════════════
+%  PROFESSIONAL PROFILE
+% ══════════════════════════════════════════════════════════════════════════════
+\section{Professional Profile}
+
+Fresh graduate with hands-on experience supporting productions, coordinating
+event logistics, and managing communication between stakeholders, crew, and
+administrative teams across the UAE. Reliable under pressure, detail-oriented,
+and comfortable supporting shoots from planning through delivery.
+
+% ══════════════════════════════════════════════════════════════════════════════
+%  PRODUCTION & CLIENT-FACING EXPERIENCE
+% ══════════════════════════════════════════════════════════════════════════════
+\section{Production \& Client-Facing Experience}
+
+\roleentry{FREELANCE PHOTOGRAPHER \& EVENT MEDIA CREATOR}%
+          {Independent \textbar\ Abu Dhabi \& Dubai, UAE}{2022\,--\,Present}
+\begin{itemize}
+  \item Act as on-site production contact for conferences, exhibitions, performances,
+        and institutional events; manage schedules, shot lists, and client approvals.
+  \item Deliver edited photography and short-form video documentation with rapid,
+        reliable turnaround for organisers and stakeholders.
+  \item Coordinate logistics end-to-end: equipment prep, vendor communication,
+        file delivery, and structured feedback rounds.
+\end{itemize}
+
+\vspace{3pt}
+\roleentry{NYU ABU DHABI HOUSING}%
+          {Residential Assistant \textbar\ Abu Dhabi, UAE}{2023\,--\,2026}
+\begin{itemize}
+  \item Served as primary liaison between residents and university administration;
+        handled inquiries, scheduling, and escalations with professionalism.
+  \item Planned and executed community events including logistics, vendor booking,
+        and post-event documentation for 200+ residents.
+\end{itemize}
+
+\vspace{3pt}
+\roleentry{MENTAL.AE}%
+          {Creative Production Intern \textbar\ Abu Dhabi, UAE}{Nov 2024\,--\,Jan 2025}
+\begin{itemize}
+  \item Supported QA and documentation for training media content; tracked issues and
+        communicated actionable feedback across design and production teams.
+  \item Assisted cinematic sequence production using Unity and Cinemachine for
+        client-facing demo and training deliverables.
+\end{itemize}
+
+\vspace{3pt}
+\roleentry{RESEARCH ASSISTANT}%
+          {VR Emotion Induction Toolkit, NYU Abu Dhabi \textbar\ Abu Dhabi, UAE}{2025}
+\begin{itemize}
+  \item Designed immersive environments and interactive scenarios for VR-based
+        research studies at NYU Abu Dhabi.
+  \item Supported testing sessions and documented iteration feedback across
+        multidisciplinary collaborators.
+\end{itemize}
+
+% ══════════════════════════════════════════════════════════════════════════════
+%  SELECTED PRODUCTIONS
+% ══════════════════════════════════════════════════════════════════════════════
+\section{Selected Productions}
+
+{\setlength{\tabcolsep}{0pt}%
+\begin{tabular}{@{}p{\prodlabelwidth}@{\hspace{6pt}}p{\textwidth-\prodlabelwidth-6pt}@{}}
+  \textbf{V!Real(ity)}       & Capstone exhibition: Produced immersive installation; coordinated
+    technical rehearsals, crew scheduling, and live audience flow from prep through show.\\[2pt]
+  \textbf{Mondrian's Mirage} & Louvre Abu Dhabi: Delivered public VR installation; liaised with
+    museum staff on install timelines, visitor coordination, and exhibition requirements.\\[2pt]
+  \textbf{Whispers from the Depth} & NYUAD Black Box Theater: Supported live XR performance
+    production, including run-of-show coordination and crew communication.\\[2pt]
+  \textbf{Alien Meta Rave}   & New York: Coordinated a live VR music event with projection,
+    performer cues, and audience-facing delivery across a tight timeline.\\[2pt]
+  \textbf{Are You There?}    & La MaMa Studio, NYC: Co-produced hybrid performance; managed
+    projection, music, and live talent coordination during show week.\\
+\end{tabular}}
+
+% ══════════════════════════════════════════════════════════════════════════════
+%  SKILLS
+% ══════════════════════════════════════════════════════════════════════════════
+\section{Skills}
+
+{\small
+\noindent
+\begin{minipage}[t]{0.32\textwidth}
+  \textbf{Production}\\[2pt]
+  Scheduling \& call sheets\\
+  Client liaison\\
+  Crew \& talent coordination\\
+  Location \& logistics support\\
+  Casting \& sourcing research\\
+  Production documentation
+\end{minipage}%
+\begin{minipage}[t]{0.32\textwidth}
+  \textbf{Media Delivery}\\[2pt]
+  Photography \& videography\\
+  Coverage planning\\
+  Shot list support\\
+  Post-production coordination\\
+  Quality checks\\
+  Rapid asset turnaround
+\end{minipage}%
+\begin{minipage}[t]{0.32\textwidth}
+  \textbf{Tools \& Languages}\\[2pt]
+  DaVinci Resolve\\
+  Adobe Creative Suite\\
+  OBS Studio\\
+  Blender\\
+  English (fluent)\\
+  Arabic (fluent)
+\end{minipage}
+}
+
+\end{document}

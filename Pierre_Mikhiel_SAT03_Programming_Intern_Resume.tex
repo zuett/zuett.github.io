@@ -1,0 +1,118 @@
+\documentclass[letterpaper,10pt]{article}
+
+% Packages
+\usepackage[empty]{fullpage}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{calc}
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{xifthen}
+\usepackage{microtype}
+
+% Page geometry
+\pagestyle{empty}
+\addtolength{\oddsidemargin}{-0.55in}
+\addtolength{\evensidemargin}{-0.55in}
+\addtolength{\textwidth}{1.1in}
+\addtolength{\topmargin}{-.75in}
+\addtolength{\textheight}{1.5in}
+
+% Section style
+\titleformat{\section}{\normalsize\bfseries\uppercase}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{5pt}{2pt}
+
+% List spacing
+\setlist[itemize]{leftmargin=*, noitemsep, topsep=1pt, partopsep=0pt, parsep=0pt}
+
+% Role entry: {ORG}{subtitle}{date}
+\newcommand{\roleentry}[3]{%
+  \noindent\textbf{#1}\hfill\textit{#3}%
+  \ifthenelse{\isempty{#2}}{\\[-4pt]}{\\[-1pt]\textit{#2}\\[-4pt]}%
+}
+
+\begin{document}
+
+% Header
+\begin{center}
+  {\LARGE\textbf{PIERRE MIKHIEL}}\\[3pt]
+  Programming Intern Candidate \textbar\ Public Engagement \& Cultural Events\\[2pt]
+  {\small
+    Abu Dhabi, UAE \textbar\ Available across UAE \textbar\
+    +971 55 984 5520 \textbar\
+    \href{mailto:pmk2057@nyu.edu}{pmk2057@nyu.edu} \textbar\
+    \href{https://pierremikhiel.com}{pierremikhiel.com} \textbar\
+    \href{https://www.linkedin.com/in/pierre-mikhiel}{linkedin.com/in/pierre-mikhiel}
+  }
+\end{center}
+
+\vspace{2pt}
+
+% Professional profile
+\section{Professional Profile}
+
+NYU Abu Dhabi Interactive Media graduate with cross-disciplinary experience in public-facing programming, community outreach, and event delivery across cultural and educational contexts. Bilingual Arabic/English communicator with strong coordination, documentation, and stakeholder support skills. Comfortable supporting workshops, talks, screenings, performances, and opening-week operations, including evening and weekend schedules.
+
+% Core capabilities
+\section{Core Capabilities}
+Public programming coordination \textbar\ Audience engagement \textbar\ Community liaison \textbar\ Participant communication \textbar\ Interview support \textbar\ Qualitative research \textbar\ Event logistics \textbar\ Run-of-show support \textbar\ Reporting and records management \textbar\ Cross-team collaboration
+
+% Experience
+\section{Programming, Outreach \& Event Experience}
+
+\roleentry{NYU ABU DHABI HOUSING}%
+          {Residential Assistant \textbar\ Abu Dhabi, UAE}{Aug 2023\,--\,Present}
+\begin{itemize}
+  \item Coordinate inclusive community programming for 200+ residents, from planning and outreach through delivery and post-event follow-up.
+  \item Serve as primary liaison between residents and university teams; handle participant communication, scheduling, and sensitive escalations.
+  \item Support student learning and engagement activities while maintaining organized records, communication logs, and referral documentation.
+\end{itemize}
+
+\vspace{3pt}
+\roleentry{FREELANCE PHOTOGRAPHER \& EVENT MEDIA CREATOR}%
+          {Independent \textbar\ Abu Dhabi \& Dubai, UAE}{2022\,--\,Present}
+\begin{itemize}
+  \item Support institutional and cultural events through on-site coordination with organizers, facilitators, performers, and production teams.
+  \item Produce structured documentation packages (photo/video selects, metadata, summaries) that improve reporting, archives, and stakeholder communication.
+  \item Manage event-day logistics including schedules, shot planning, setup coordination, and rapid delivery under tight timelines.
+\end{itemize}
+
+\vspace{3pt}
+\roleentry{INTERACTIVE MEDIA, NYU ABU DHABI}%
+          {Machine Learning Research Assistant (ml5.js) \textbar\ Abu Dhabi, UAE}{Jan 2026\,--\,Present}
+\begin{itemize}
+  \item Develop accessible learning materials and workshop-ready creative coding demos for artists, educators, and non-specialist participants.
+  \item Translate technical concepts into clear public-facing explanations that support inclusive participation and collaborative learning.
+\end{itemize}
+
+\vspace{3pt}
+\roleentry{MENTAL.AE}%
+          {Creative Production Intern \textbar\ Abu Dhabi, UAE}{Nov 2024\,--\,Jan 2025}
+\begin{itemize}
+  \item Coordinated feedback and documentation across design and production teams for client-facing media and training outputs.
+  \item Supported production workflows, quality tracking, and delivery readiness across multidisciplinary collaborators.
+\end{itemize}
+
+% Selected projects
+\section{Selected Public-Facing Projects}
+\begin{itemize}
+  \item \textbf{Louvre Abu Dhabi --- Mondrian's Mirage (2024):} Built an immersive visitor experience and coordinated installation support in a museum context focused on audience interaction.
+  \item \textbf{ArtsIT 2024 --- Event Operations \& Documentation (2024):} Supported event logistics, photography, media management, and organized post-event documentation.
+  \item \textbf{NYUAD Black Box / La MaMa Studio --- XR Performance Projects (2024--2025):} Coordinated hybrid performance delivery across technical teams, performers, and audience-facing constraints.
+  \item \textbf{Swissnex --- Future of Rights of Nature (2024):} Contributed research and public communication for a globally recognized interdisciplinary sustainability project.
+\end{itemize}
+
+% Education
+\section{Education}
+\noindent\textbf{NEW YORK UNIVERSITY ABU DHABI}\hfill May 2026\\
+B.A. Interactive Media \textbar\ Minors: Film \& New Media, Computer Science \textbar\ Official GPA: 3.91/4.0\\
+\textit{Relevant coursework:} Understanding MENASA Film and New Media; Global Leaps in Photography; Communication and Technology; Concepts of Film and New Media; Sound, Image, and Story; Engineering Ethics
+
+% Skills
+\section{Tools \& Languages}
+Google Workspace (Drive, Docs, Sheets, Slides) \textbar\ Adobe Creative Suite \textbar\ DaVinci Resolve \textbar\ OBS Studio \textbar\ Unity \textbar\ Blender \textbar\ Qualitative surveys and interview support \textbar\ Arabic (fluent) \textbar\ English (fluent)
+
+\end{document}

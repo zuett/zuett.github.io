@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.youtube.com https://www.youtube-nocookie.com; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://thelieyoubelieved.framer.website; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' https://www.youtube.com https://www.youtube-nocookie.com https://ajax.googleapis.com; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://thelieyoubelieved.framer.website; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https: blob:; worker-src 'self' blob:;">
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
   <title>Pierre Mikhiel – Portfolio</title>
   <link rel="icon" type="image/png" href="assets/images/Logo.png">
   <link rel="apple-touch-icon" href="assets/images/Logo.png">
@@ -77,6 +78,10 @@
   <header>
     <div class="nav-sticky-wrapper">
       <div class="nav-card">
+        <a href="#hero-section" class="nav-brand-link" aria-label="Pierre Mikhiel — back to top">
+          <span class="nav-brand-mark" aria-hidden="true">PM</span>
+          <span class="nav-brand-name">Pierre Mikhiel</span>
+        </a>
         <!-- Mobile hamburger menu -->
         <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
           <span></span>
@@ -89,11 +94,21 @@
           <ul>
             <li><a href="#personal">About</a></li>
             <li><a href="#highlights">Highlights</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#personal-work">Work</a></li>
             <li><a href="#toolkit">Toolkit</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
+          <div class="nav-pathways">
+            <span class="nav-pathways-label" id="nav-pathways-label">Jump to</span>
+            <div class="glass-radio-group pathway-compact" role="radiogroup" aria-labelledby="nav-pathways-label">
+              <input type="radio" id="nav-radio-research" name="pathway-nav" value="#research">
+              <label for="nav-radio-research" title="Research">Research</label>
+              <input type="radio" id="nav-radio-creative" name="pathway-nav" value="#personal-work">
+              <label for="nav-radio-creative" title="Creative Work">Creative Work</label>
+              <input type="radio" id="nav-radio-professional" name="pathway-nav" value="#work-experience">
+              <label for="nav-radio-professional" title="Professional Experience">Professional Experience</label>
+              <div class="glass-glider" aria-hidden="true"></div>
+            </div>
+          </div>
         </nav>
       </div>
     </div>
@@ -109,6 +124,7 @@
           </div>
         </div>
         
+        <div class="intro-column">
         <div class="custom-card">
           <h2 class="signature-name">Who?</h2>
           <div class="bio-card-halo"></div>
@@ -146,12 +162,27 @@
                 <span class="word">technology.</span>
               </p>
               <div class="hero-cta-row">
-                <a href="#personal-work" class="btn btn-primary-glow">View Work</a>
-                <a href="assets/Pierre_CV_S26.pdf" download="Pierre_26_CV.pdf" target="_blank" class="btn btn-secondary-glass">Download CV</a>
+                <a href="assets/Pierre_CV_S26.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary-glass">View CV</a>
                 <a href="#contact" class="btn btn-secondary-glass">Let's Work Together</a>
               </div>
             </div>
           </div>
+        </div>
+        <div class="pathway-nav" aria-labelledby="pathway-label">
+          <p class="pathway-label" id="pathway-label">Jump to my...</p>
+          <div class="pathway-row">
+            <div class="glass-radio-group pathway-choices" role="radiogroup" aria-label="Pathway options">
+              <input type="radio" id="pathway-radio-research" name="pathway" value="#research">
+              <label for="pathway-radio-research">Research</label>
+              <input type="radio" id="pathway-radio-creative" name="pathway" value="#personal-work">
+              <label for="pathway-radio-creative">Creative Work</label>
+              <input type="radio" id="pathway-radio-professional" name="pathway" value="#work-experience">
+              <label for="pathway-radio-professional">Professional Experience</label>
+              <div class="glass-glider" aria-hidden="true"></div>
+            </div>
+            <button type="button" class="btn btn-primary-glow pathway-view" data-pathway-view disabled>View</button>
+          </div>
+        </div>
         </div>
       </div>
     </section>
@@ -344,18 +375,35 @@
           </div>
           <div class="project-overlay">
             <h3>Interactive ML Portrait Builder</h3>
-            <p>A research assistantship tool that helps first-time ml5.js users combine vision models and export custom starter projects.</p>
-            <button class="coming-soon-btn" type="button" disabled aria-disabled="true">Coming Soon</button>
+            <p>An interactive creative coding system that transforms your webcam into a real-time generative portrait engine using p5.js and ml5.js.</p>
+            <button class="view-project-btn">View Project</button>
           </div>
         </div>
         <div class="project-card" data-project="ur20-attachment">
-          <div class="project-image">
-            <img src="assets/projects/ur20-cover.jpg" alt="UR20 attachment prototype cover">
+          <div class="project-image project-image-3d">
+            <model-viewer
+              data-project-model="ur20"
+              src="assets/projects/ur20-iridescent-scale-attachment.glb"
+              poster="assets/projects/ur20-cover.jpg"
+              alt="UR20 iridescent scale attachment prototype"
+              camera-controls
+              touch-action="pan-y"
+              shadow-intensity="1"
+              exposure="1.35"
+              environment-image="neutral"
+              interaction-prompt="none"
+              tone-mapping="aces"
+              camera-target="0.15m 0.38m -0.06m"
+              camera-orbit="125deg 72deg 3.4m"
+              min-camera-orbit="auto auto 2.2m"
+              max-camera-orbit="auto auto 6m"
+            ></model-viewer>
+            <span class="project-3d-hint" aria-hidden="true">Drag to rotate</span>
           </div>
           <div class="project-overlay">
             <h3>UR20 Attachment Prototype</h3>
-            <p>A robotics attachment concept placeholder for mechanical interface and testing documentation.</p>
-            <button class="coming-soon-btn" type="button" disabled aria-disabled="true">Coming Soon</button>
+            <p>A Blender-modeled end-effector concept with iridescent scale surfacing for the Universal Robots UR20 platform.</p>
+            <button class="view-project-btn">View Project</button>
           </div>
         </div>
         <div class="project-card" data-project="memories">
@@ -611,7 +659,7 @@
           <p>Based in Abu Dhabi and available to relocate for the right research, immersive media, or creative technology opportunity.</p>
         </div>
         <div class="contact-cta-actions">
-          <a href="mailto:pmk2057@nyu.edu" class="btn btn-primary-glow">Email Me</a>
+          <a href="mailto:pmk2057@nyu.edu" class="btn btn-primary-glow">Let&rsquo;s Work Together</a>
           <a href="assets/Pierre_CV_S26.pdf" target="_blank" class="btn btn-secondary-glass">Open CV</a>
         </div>
       </div>
@@ -754,7 +802,7 @@
       },
       "portrait-builder": {
         title: "Interactive ML Portrait Builder",
-        description: "An interactive p5.js and ml5.js tool that helps first-time users combine real-time vision models and export a custom starter project.",
+        description: "An interactive creative coding system built with p5.js and ml5.js that transforms your webcam into a real-time generative portrait engine.",
         tags: ["p5.js", "ml5.js", "Creative Coding", "Computer Vision", "Education", "Tooling"],
         image: "assets/projects/portrait-placeholder.svg",
         links: [
@@ -766,31 +814,57 @@
             <div class="project-modal-heading">
               <p class="project-eyebrow">Machine learning tool</p>
               <h2>Interactive ML Portrait Builder</h2>
-              <p>A modular ml5.js starter tool where machine-learning models become visual layers and exportable code templates.</p>
+              <p>A modular system where multiple machine learning models act as visual layers you can combine, toggle, and export.</p>
             </div>
-            <p>I proposed and developed ML5 Portrait Builder as part of my research assistantship to make ml5.js more accessible for first-time users. The tool brings together Face Mesh, Body Pose, Hand Pose, Body Segmentation, and Face Texture in one simple interface, letting users toggle models visually instead of manually combining separate examples.</p>
-            <p>After experimenting, users can export a customized ZIP project containing only the models and files they selected. The result works both as an educational demo and as a practical starter template for creative machine-learning projects.</p>
-            <div class="placeholder-panel">
-              <img src="assets/projects/portrait-placeholder.svg" alt="Interactive ML Portrait Builder placeholder">
+            <p>An interactive creative coding system built with <strong>p5.js</strong> and <strong>ml5.js</strong> that transforms your webcam into a real-time generative portrait engine. This project is not a single artwork, but a modular system where multiple machine learning models act as visual layers you can combine, toggle, and export.</p>
+            <p>The system uses real-time webcam input and runs multiple ML models in parallel. Each model acts as a composable layer: face for identity, body for structure, hands for interaction, segmentation for abstraction, and texture for transformation. You are not using the system — you are composing with it.</p>
+            <ul style="margin: 1.25rem 0; padding-left: 1.25rem; line-height: 1.7;">
+              <li><strong>Face Mesh</strong> — facial landmark visualization</li>
+              <li><strong>Body Pose</strong> — skeletal tracking</li>
+              <li><strong>Hand Pose</strong> — hand keypoint tracking</li>
+              <li><strong>Body Segmentation</strong> — background separation</li>
+              <li><strong>Face Texture Mapping</strong> — dynamic image projection onto face</li>
+            </ul>
+            <p>After experimenting, users can export a customized ZIP project containing only the models and files they selected. The export system dynamically generates minimal starter code based on selected features, making the tool both a creative system and a practical code generator for first-time ml5.js users.</p>
+            <div class="project-video" style="margin: 2rem 0;">
+              <iframe width="100%" height="400" data-youtube-src="https://www.youtube.com/embed/LmwLDrDu6Lc?rel=0&playsinline=1" src="about:blank" title="Interactive ML Portrait Builder demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius: 8px;" referrerpolicy="origin"></iframe>
             </div>
           </div>
         `
       },
       "ur20-attachment": {
         title: "UR20 Attachment Prototype",
-        description: "A placeholder for a robotics attachment prototype exploring mechanical interface, mounting, and end-effector interaction for the UR20 platform.",
-        tags: ["Robotics", "Prototype", "UR20", "Mechanical Design", "Fabrication"],
+        description: "A Blender-modeled end-effector concept with iridescent scale surfacing, designed for the Universal Robots UR20 platform.",
+        tags: ["Robotics", "Prototype", "UR20", "Blender", "Mechanical Design", "3D Modeling"],
         image: "assets/projects/ur20-cover.jpg",
         detailedContent: `
           <div class="project-details polished-project">
             <div class="project-modal-heading">
-              <p class="project-eyebrow">Prototype placeholder</p>
+              <p class="project-eyebrow">Robotics prototype</p>
               <h2>UR20 Attachment Prototype</h2>
-              <p>A draft project card reserved for prototype images, testing notes, and mechanical documentation.</p>
+              <p>An iridescent scale end-effector concept modeled in Blender for the Universal Robots UR20 arm.</p>
             </div>
-            <p>This entry is set up as a polished placeholder for future CAD renders, fabrication photos, mounted-arm tests, and end-effector details. Once assets are ready, the card can be updated without changing the portfolio structure.</p>
+            <p>This prototype explores a sculptural attachment language for industrial robotics: a segmented arm extension finished with layered iridescent scales that shift color under light. The design balances mechanical mounting logic with a more expressive, creature-like surface treatment.</p>
+            <p>The model was built in Blender as a concept study for interface geometry, end-effector volume, and visual identity before physical fabrication and arm-side testing.</p>
+            <div class="project-model-viewer-panel">
+              <model-viewer
+                data-project-model="ur20"
+                src="assets/projects/ur20-iridescent-scale-attachment.glb"
+                poster="assets/projects/ur20-cover.jpg"
+                alt="UR20 iridescent scale attachment prototype"
+                camera-controls
+                touch-action="pan-y"
+                auto-rotate
+                shadow-intensity="1"
+                exposure="1.35"
+                environment-image="neutral"
+                interaction-prompt="auto"
+                tone-mapping="aces"
+              ></model-viewer>
+              <p class="project-model-caption">Interactive Blender export — drag to inspect the attachment from any angle.</p>
+            </div>
             <div class="placeholder-panel">
-              <img src="assets/projects/ur20-cover.jpg" alt="UR20 Attachment Prototype cover">
+              <img src="assets/projects/ur20-cover.jpg" alt="UR20 Attachment Prototype render">
             </div>
           </div>
         `
@@ -1363,6 +1437,7 @@
           modalButtons.appendChild(docButton);
         }
         handleYouTubeVideos(modal);
+        setupModelViewers(modal);
         modal.classList.add('active');
         modal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
@@ -1398,6 +1473,9 @@
         lastFocusedElement.focus({ preventScroll: true });
       }
     }
+
+    // Read-only handle for mobile-only card builders; changes no behavior.
+    window.portfolioModal = { data: projectData, open: openModal };
 
     function trapModalFocus(event) {
       if (!modal.classList.contains('active') || event.key !== 'Tab') return;
@@ -1467,6 +1545,48 @@
         closeModal();
       }
     });
+
+    function setupModelViewers(root = document) {
+      root.querySelectorAll('model-viewer[data-project-model]').forEach(mv => {
+        if (mv.dataset.prepared === 'true') return;
+        mv.dataset.prepared = 'true';
+
+        const frameModel = () => {
+          if (!mv.loaded) return;
+          try {
+            mv.cameraTarget = '0.15m 0.38m -0.06m';
+            mv.cameraOrbit = '125deg 72deg 3.4m';
+            mv.fieldOfView = '30deg';
+            if (typeof mv.jumpCameraToGoal === 'function') {
+              mv.jumpCameraToGoal();
+            }
+          } catch (_) {}
+        };
+
+        const showFallback = () => {
+          const panel = mv.closest('.project-image-3d, .project-model-viewer-panel');
+          if (!panel || panel.querySelector('.project-3d-fallback')) return;
+          const fallback = document.createElement('img');
+          fallback.className = 'project-3d-fallback';
+          fallback.src = 'assets/projects/ur20-cover.jpg';
+          fallback.alt = 'UR20 Attachment Prototype render';
+          panel.appendChild(fallback);
+        };
+
+        mv.addEventListener('load', frameModel);
+        mv.addEventListener('poster-dismissed', frameModel);
+        mv.addEventListener('error', showFallback);
+        if (mv.loaded) frameModel();
+      });
+    }
+
+    if (customElements.get('model-viewer')) {
+      setupModelViewers();
+    } else {
+      customElements.whenDefined('model-viewer').then(() => setupModelViewers()).catch(() => {});
+    }
+
+    window.refreshModelViewers = setupModelViewers;
 
     function getYouTubeVideoId(embedUrl) {
       const pathParts = embedUrl.pathname.split('/').filter(Boolean);
@@ -1848,6 +1968,432 @@
       processCards.forEach(card => card.classList.add('is-visible'));
     }
 
+  </script>
+  <script>
+    // --- Shared section-scroll helper (sticky-header aware, reduced-motion safe) ---
+    window.portfolioScrollTo = function (hash) {
+      const target = document.querySelector(hash);
+      if (!target) return false;
+      // Account for the fixed nav pill (laid out even while transparent).
+      const navCard = document.querySelector('.nav-card');
+      const navHeight = navCard ? navCard.getBoundingClientRect().height : 0;
+      const offset = Math.max(navHeight + 28, 92);
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top: Math.max(top, 0), behavior: reduceMotion ? 'auto' : 'smooth' });
+      if (history.replaceState) history.replaceState(null, '', hash);
+      // Move keyboard/screen-reader focus to the destination without jumping.
+      if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+      target.focus({ preventScroll: true });
+      return true;
+    };
+  </script>
+  <script>
+    // --- Introduction pathway selector: select arms the View button, View navigates ---
+    // Native radios keep Tab / arrow-key behavior; no dependencies.
+    (function () {
+      const group = document.querySelector('.pathway-choices');
+      const viewBtn = document.querySelector('[data-pathway-view]');
+      if (!group || !viewBtn) return;
+
+      const radios = Array.from(group.querySelectorAll('input[name="pathway"]'));
+
+      function selectedTarget() {
+        const checked = radios.find(radio => radio.checked);
+        return checked ? checked.value : null;
+      }
+
+      radios.forEach((radio) => {
+        radio.addEventListener('change', () => {
+          if (!radio.checked) return;
+          // Selection only highlights + arms View; navigation waits for View.
+          viewBtn.disabled = false;
+          viewBtn.classList.add('armed');
+        });
+      });
+
+      viewBtn.addEventListener('click', () => {
+        const target = selectedTarget();
+        if (target) window.portfolioScrollTo(target);
+      });
+
+      // Context awareness: a settled stay in an unrelated section resets the
+      // selector to its initial state; pass-through scrolling never clears
+      // (dwell-guarded, so the ride to the destination is never interrupted).
+      const PATHWAY_IDS = ['research', 'personal-work', 'work-experience'];
+      let resetTimer = null;
+      document.addEventListener('portfolio:section', (e) => {
+        if (resetTimer) { clearTimeout(resetTimer); resetTimer = null; }
+        if (!selectedTarget()) return;
+        if (PATHWAY_IDS.includes(e.detail)) return;
+        resetTimer = setTimeout(() => {
+          resetTimer = null;
+          radios.forEach(radio => { radio.checked = false; });
+          viewBtn.disabled = true;
+          viewBtn.classList.remove('armed');
+        }, 800);
+      });
+    })();
+  </script>
+  <script>
+    // --- Navigation-menu pathway shortcuts: each option navigates directly ---
+    // Independent radio group (name="pathway-nav"); closes the mobile menu.
+    (function () {
+      const group = document.querySelector('.pathway-compact');
+      if (!group) return;
+
+      const radios = Array.from(group.querySelectorAll('input[name="pathway-nav"]'));
+
+      function closeMobileMenu() {
+        const navMenu = document.querySelector('.nav-menu');
+        if (!navMenu || !navMenu.classList.contains('active')) return;
+        const toggle = document.querySelector('.mobile-menu-toggle');
+        navMenu.classList.remove('active');
+        if (toggle) {
+          toggle.classList.remove('active');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+        const modal = document.getElementById('project-modal');
+        if (!modal || !modal.classList.contains('active')) document.body.style.overflow = 'auto';
+      }
+
+      radios.forEach((radio) => {
+        radio.addEventListener('change', () => {
+          if (!radio.checked) return;
+          closeMobileMenu();
+          window.portfolioScrollTo(radio.value);
+        });
+      });
+    })();
+  </script>
+  <script>
+    // --- Navigation scroll-spy: highlight the section currently in view ---
+    // The menu-trio glider follows location (checked = current section);
+    // plain links use aria-current. Narrow observer band avoids boundary
+    // flicker; unmapped gaps (hero, process) keep the last state.
+    // Broadcasts `portfolio:section` so the intro selector can track context.
+    (function () {
+      if (!('IntersectionObserver' in window)) return;
+
+      const entries = [
+        { id: 'personal', link: '.nav-menu a[href="#personal"]' },
+        { id: 'highlights', link: '.nav-menu a[href="#highlights"]' },
+        { id: 'research', radio: 'nav-radio-research' },
+        { id: 'personal-work', radio: 'nav-radio-creative' },
+        { id: 'toolkit', link: '.nav-menu a[href="#toolkit"]' },
+        { id: 'work-experience', radio: 'nav-radio-professional' },
+        { id: 'contact', link: '.nav-menu a[href="#contact"]' },
+      ];
+
+      const items = entries.map((entry) => ({
+        id: entry.id,
+        section: document.getElementById(entry.id),
+        target: entry.link
+          ? document.querySelector(entry.link)
+          : document.getElementById(entry.radio),
+        isLink: Boolean(entry.link),
+      })).filter(item => item.section && item.target);
+
+      if (!items.length) return;
+
+      let lastId = null;
+
+      function setActive(id) {
+        items.forEach((item) => {
+          const on = item.id === id;
+          if (item.isLink) {
+            if (on) item.target.setAttribute('aria-current', 'true');
+            else item.target.removeAttribute('aria-current');
+          } else {
+            // Programmatic check moves the glider without firing change.
+            item.target.checked = on;
+          }
+        });
+        if (id !== lastId) {
+          lastId = id;
+          document.dispatchEvent(new CustomEvent('portfolio:section', { detail: id }));
+        }
+      }
+
+      const spy = new IntersectionObserver((observed) => {
+        observed.forEach((entry) => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+
+      items.forEach(item => spy.observe(item.section));
+    })();
+  </script>
+  <script>
+    // --- Research card expanders (mobile only) ---
+    // Injects per-card View More / Show Less buttons when the mobile query
+    // matches; on desktop nothing is added and cards render fully as before.
+    (function () {
+      const mq = window.matchMedia('(max-width: 767px)');
+      const LABELS = { more: 'View More', less: 'Show Less' };
+
+      function setup() {
+        document.querySelectorAll('.research-card').forEach((card) => {
+          if (card.querySelector('.research-expander')) return;
+          const content = card.querySelector('.research-content');
+          if (!content) return;
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'research-expander';
+          btn.setAttribute('aria-expanded', 'false');
+          const label = document.createElement('span');
+          label.textContent = LABELS.more;
+          btn.appendChild(label);
+          btn.addEventListener('click', () => {
+            const open = card.classList.toggle('expanded');
+            btn.setAttribute('aria-expanded', String(open));
+            label.textContent = open ? LABELS.less : LABELS.more;
+          });
+          content.appendChild(btn);
+        });
+      }
+
+      function teardown() {
+        document.querySelectorAll('.research-card').forEach((card) => {
+          card.classList.remove('expanded');
+          const btn = card.querySelector('.research-expander');
+          if (btn) btn.remove();
+        });
+      }
+
+      if (mq.matches) setup();
+      if (typeof mq.addEventListener === 'function') {
+        mq.addEventListener('change', (e) => { if (e.matches) setup(); else teardown(); });
+      } else if (typeof mq.addListener === 'function') {
+        mq.addListener((e) => { if (e.matches) setup(); else teardown(); });
+      }
+    })();
+  </script>
+  <script>
+    // --- Practice strip expander (mobile only) ---
+    // Same gated pattern as the research expanders: on desktop nothing is
+    // added and the strip renders fully as before.
+    (function () {
+      const mq = window.matchMedia('(max-width: 767px)');
+
+      function setup() {
+        document.querySelectorAll('.practice-strip').forEach((strip) => {
+          if (strip.querySelector('.practice-expander')) return;
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'practice-expander';
+          btn.setAttribute('aria-expanded', 'false');
+          const label = document.createElement('span');
+          label.textContent = 'View More';
+          btn.appendChild(label);
+          btn.addEventListener('click', () => {
+            const open = strip.classList.toggle('expanded');
+            btn.setAttribute('aria-expanded', String(open));
+            label.textContent = open ? 'Show Less' : 'View More';
+          });
+          strip.appendChild(btn);
+        });
+      }
+
+      function teardown() {
+        document.querySelectorAll('.practice-strip').forEach((strip) => {
+          strip.classList.remove('expanded');
+          const btn = strip.querySelector('.practice-expander');
+          if (btn) btn.remove();
+        });
+      }
+
+      if (mq.matches) setup();
+      if (typeof mq.addEventListener === 'function') {
+        mq.addEventListener('change', (e) => { if (e.matches) setup(); else teardown(); });
+      } else if (typeof mq.addListener === 'function') {
+        mq.addListener((e) => { if (e.matches) setup(); else teardown(); });
+      }
+    })();
+  </script>
+  <script>
+    // --- Mobile hamburger (Uiverse template) driving the existing menu ---
+    // Injected only when the mobile query matches; on desktop nothing is
+    // added and the original toggle rules apply as before. Single source of
+    // truth: the menu's .active class. setMenu() is the only writer (menu +
+    // checkbox + aria always flip together); taps never rely on native
+    // label-activation timing and never reach the document outside-click
+    // closer. A MutationObserver mirrors externally triggered closes
+    // (link/Escape/X/outside/radio) back onto the checkbox animation.
+    (function () {
+      const mq = window.matchMedia('(max-width: 767px)');
+      const PATH_TOP_BOTTOM = 'M27 10 13 10C10.8 10 9 8.2 9 6 9 3.8 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22';
+      const PATH_MIDDLE = 'M7 16 27 16';
+      let observer = null;
+
+      function menu() { return document.querySelector('.nav-menu'); }
+      function legacyToggle() { return document.querySelector('.mobile-menu-toggle'); }
+      function modalOpen() {
+        const modal = document.getElementById('project-modal');
+        return !!modal && modal.classList.contains('active');
+      }
+      function isOpen() {
+        const m = menu();
+        return !!m && m.classList.contains('active');
+      }
+
+      function setup() {
+        const bar = document.querySelector('.nav-card');
+        if (!bar || bar.querySelector('.hamburger')) return;
+        const label = document.createElement('label');
+        label.className = 'hamburger';
+        label.setAttribute('role', 'button');
+        label.setAttribute('tabindex', '0');
+        label.setAttribute('aria-label', 'Toggle navigation menu');
+        label.setAttribute('aria-expanded', 'false');
+        label.innerHTML = '<input type="checkbox">'
+          + '<svg viewBox="0 0 32 32">'
+          + '<path class="line line-top-bottom" d="' + PATH_TOP_BOTTOM + '"></path>'
+          + '<path class="line" d="' + PATH_MIDDLE + '"></path>'
+          + '</svg>';
+        const box = label.querySelector('input');
+
+        // The one and only state writer. Mirrors the original open/close
+        // semantics (classes, aria, body scroll lock) exactly.
+        function setMenu(open) {
+          const m = menu();
+          box.checked = open; // drives the :checked animation; fires no events
+          if (m) {
+            m.classList.toggle('active', open);
+            const t = legacyToggle();
+            if (t) {
+              t.classList.toggle('active', open);
+              t.setAttribute('aria-expanded', String(open));
+            }
+            if (open) document.body.style.overflow = 'hidden';
+            else if (!modalOpen()) document.body.style.overflow = 'auto';
+          }
+          label.setAttribute('aria-expanded', String(open));
+        }
+
+        label.addEventListener('click', (e) => {
+          e.preventDefault(); // never depend on native label-activation timing
+          e.stopPropagation(); // never trip the document outside-click closer
+          setMenu(!isOpen());
+        });
+        label.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            setMenu(!isOpen());
+          }
+        });
+        bar.appendChild(label);
+        if (typeof MutationObserver === 'function' && menu()) {
+          observer = new MutationObserver(() => {
+            const open = isOpen();
+            if (box.checked !== open) box.checked = open; // mirror only; no events
+            label.setAttribute('aria-expanded', String(open));
+          });
+          observer.observe(menu(), { attributes: true, attributeFilter: ['class'] });
+        }
+      }
+
+      function teardown() {
+        if (observer) { observer.disconnect(); observer = null; }
+        document.querySelectorAll('.nav-card .hamburger').forEach((h) => h.remove());
+        const modal = document.getElementById('project-modal');
+        if (!modal || !modal.classList.contains('active')) document.body.style.overflow = 'auto';
+      }
+
+      if (mq.matches) setup();
+      if (typeof mq.addEventListener === 'function') {
+        mq.addEventListener('change', (e) => { if (e.matches) setup(); else teardown(); });
+      } else if (typeof mq.addListener === 'function') {
+        mq.addListener((e) => { if (e.matches) setup(); else teardown(); });
+      }
+    })();
+  </script>
+  <script>
+    // --- More Builds as full project cards (mobile only) ---
+    // Replaces the compact quad strip with standard cards built from the
+    // live project data, so dimensions, typography and modal behavior match
+    // the main grid exactly. On desktop nothing changes: no cards are built
+    // and the original quad is restored on resize back up.
+    (function () {
+      const mq = window.matchMedia('(max-width: 767px)');
+      const QUAD_IDS = ['unity-mini-game', 'unity-proj-2', 'unity-proj-3'];
+      let storedQuad = null;
+
+      function buildCard(id, data, open) {
+        const card = document.createElement('div');
+        card.className = 'project-card';
+        card.dataset.project = id;
+        card.setAttribute('data-quad-card', 'true');
+        const image = document.createElement('div');
+        image.className = 'project-image';
+        const img = document.createElement('img');
+        img.src = data.image;
+        img.alt = data.title;
+        img.loading = 'lazy';
+        img.decoding = 'async';
+        image.appendChild(img);
+        const overlay = document.createElement('div');
+        overlay.className = 'project-overlay';
+        const title = document.createElement('h3');
+        title.textContent = data.title;
+        const desc = document.createElement('p');
+        desc.textContent = data.description;
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'view-project-btn';
+        btn.textContent = 'View Project';
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          open(id);
+        });
+        overlay.appendChild(title);
+        overlay.appendChild(desc);
+        overlay.appendChild(btn);
+        card.appendChild(image);
+        card.appendChild(overlay);
+        return card;
+      }
+
+      function setup() {
+        const grid = document.querySelector('#personal-work .projects-grid');
+        const quad = grid && grid.querySelector('.project-quad');
+        const api = window.portfolioModal;
+        if (!grid || !quad || !api || grid.querySelector('[data-quad-card]')) return;
+        const frag = document.createDocumentFragment();
+        QUAD_IDS.forEach((id) => {
+          if (api.data[id]) frag.appendChild(buildCard(id, api.data[id], api.open));
+        });
+        storedQuad = quad;
+        quad.replaceWith(frag);
+      }
+
+      function teardown() {
+        document.querySelectorAll('#personal-work [data-quad-card]').forEach((card) => card.remove());
+        const grid = document.querySelector('#personal-work .projects-grid');
+        if (grid && storedQuad && !grid.querySelector('.project-quad')) grid.appendChild(storedQuad);
+        storedQuad = null;
+      }
+
+      if (mq.matches) setup();
+      if (typeof mq.addEventListener === 'function') {
+        mq.addEventListener('change', (e) => { if (e.matches) setup(); else teardown(); });
+      } else if (typeof mq.addListener === 'function') {
+        mq.addListener((e) => { if (e.matches) setup(); else teardown(); });
+      }
+    })();
+  </script>
+  <script>
+    // --- UR20 Coming Soon (all viewports) ---
+    // Relabels the genuine card button and disables it, so its dimensions
+    // match every View Project button exactly while staying non-interactive.
+    (function () {
+      const btn = document.querySelector(
+        '#personal-work .project-card[data-project="ur20-attachment"] .view-project-btn'
+      );
+      if (!btn) return;
+      btn.textContent = 'Coming Soon';
+      btn.disabled = true;
+    })();
   </script>
 </body>
 </html>

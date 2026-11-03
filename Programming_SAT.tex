@@ -1,0 +1,173 @@
+  \documentclass[letterpaper,10pt]{article}
+
+  \usepackage[letterpaper,top=0.46in,bottom=0.48in,left=0.52in,right=0.52in]{geometry}
+  \usepackage[hidelinks]{hyperref}
+  \usepackage{enumitem}
+  \usepackage{titlesec}
+  \usepackage{tabularx}
+  \usepackage{calc}
+  \usepackage[T1]{fontenc}
+  \usepackage{helvet}
+  \usepackage{microtype}
+  \usepackage{ragged2e}
+  \usepackage{xcolor}
+  \usepackage{array}
+
+  \renewcommand{\familydefault}{\sfdefault}
+  \pagestyle{empty}
+  \setlength{\parindent}{0pt}
+  \setlength{\parskip}{0pt}
+  \linespread{0.985}
+
+  \definecolor{accent}{HTML}{174A7A}
+  \definecolor{text}{HTML}{1F2937}
+  \definecolor{muted}{HTML}{4B5563}
+  \definecolor{rulegray}{HTML}{D1D5DB}
+  \definecolor{summarybg}{HTML}{F8FAFC}
+  \definecolor{tagbg}{HTML}{F3F4F6}
+
+  \titleformat{\section}{\small\bfseries\color{accent}\uppercase}{}{0em}{}[\vspace{1pt}\color{rulegray}\titlerule]
+  \titlespacing{\section}{0pt}{6pt}{3pt}
+  \setlist[itemize]{
+    leftmargin=1.15em,
+    topsep=1.5pt,
+    itemsep=1.2pt,
+    parsep=0pt,
+    partopsep=0pt,
+    label=\textcolor{accent}{\scriptsize$\bullet$}
+  }
+
+  \newcommand{\entrytitle}[1]{\textbf{\color{text}#1}}
+  \newcommand{\entrymeta}[1]{{\footnotesize\textcolor{muted}{\textbf{#1}}}}
+  \newcommand{\tagitem}[1]{\colorbox{tagbg}{\footnotesize\textcolor{text}{\strut\hspace{5pt}#1\hspace{5pt}}}}
+  \newcommand{\leftcoltext}{\fontsize{8.5}{10.2}\selectfont\color{text}}
+  \newcommand{\rightcoltext}{\fontsize{8.55}{10.25}\selectfont\color{text}}
+
+  \begin{document}
+
+  % Header
+  {\fontsize{24}{26}\selectfont\textbf{\color{text}Pierre Mikhiel}}\\[-1pt]
+  {\fontsize{12}{14}\selectfont\textit{\textbf{\color{accent}Cultural Programming, Multimedia Documentation \& Community Practice}}}\\[4pt]
+  {\footnotesize\color{muted}
+  Abu Dhabi, UAE \textbar\ +971 55 984 5520 \textbar\ pmk2057@nyu.edu \textbar\
+  \href{https://pierremikhiel.com}{pierremikhiel.com} \textbar\
+  \href{https://www.linkedin.com/in/pierre-mikhiel}{linkedin.com/in/pierre-mikhiel}
+  }
+
+  \vspace{5pt}
+  \color{accent}\rule{\linewidth}{0.7pt}
+  \color{text}
+  \vspace{5pt}
+
+  % Summary box
+  \noindent
+  \fcolorbox{rulegray}{summarybg}{
+    \parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{
+      \fontsize{8.85}{10.6}\selectfont\color{text}
+      Abu Dhabi-based NYU Abu Dhabi graduate with Official GPA 3.91/4.0, working across cultural programming, multimedia documentation, research, and public-facing creative projects. Strong fit for Bani \& Al's place-based cultural consultancy: Arabic/English communication, MENASA film and media coursework, Arab World photography studies, community practice, event documentation, and experience translating place, memory, performance, and lived experience into thoughtful cultural content.
+    }
+  }
+
+  \vspace{7pt}
+
+  % Two-column body
+  {\setlength{\tabcolsep}{7pt}
+  \begin{tabular}{@{}p{0.305\textwidth}p{0.655\textwidth}@{}}
+
+  % LEFT COLUMN
+  \begin{minipage}[t]{\linewidth}
+  \leftcoltext
+  \section{Cultural Lens}
+  \textbf{\color{accent}Place \& People} Abu Dhabi-based; Arabic/English; community-facing roles; local/regional cultural curiosity
+
+  \vspace{3pt}
+  \textbf{\color{accent}Research} MENASA film/media, Arab World photography, environmental governance, ethics, qualitative surveys
+
+  \vspace{3pt}
+  \textbf{\color{accent}Programming} events, public presentations, showcases, audience journeys, cultural contexts
+
+  \vspace{3pt}
+  \textbf{\color{accent}Documentation} photography, media management, reports, presentation assets, portfolio narratives
+
+  \section{Tools \& Methods}
+  \begin{itemize}
+    \item Research synthesis, qualitative surveys, cultural context mapping, public presentation
+    \item Photography, media documentation, DaVinci Resolve, OBS, Google Workspace, Microsoft Office
+    \item Multimedia design: Unity, Blender, p5.js, Arduino, projection, sound, motion capture
+    \item Languages: Arabic and English
+  \end{itemize}
+
+  \section{Education}
+  \textbf{New York University Abu Dhabi - B.A.}\\
+  Interactive Media; minors in Computer Science and Film \& New Media. May 2026.\\[2pt]
+  Official GPA: 3.91/4.0. Completed major + double minor while producing research, exhibitions, public programming, and community-facing work.\\[2pt]
+Relevant coursework: Understanding MENASA Film and New Media; Introduction to Media Industries and Institutions; Global Leaps in Photography: Vernacular Photographs from the Arab World and African American Life; Communication and Technology; Sound, Image, and Story; Techniques for Safety and Production; Designing Interfaces for Live Performance; IRL/URL\_Performing Hybrid Systems.\\[2pt]
+  Additional: 200+ volunteer hours supporting event management for international events.
+
+  \section{Application Alignment}
+  \tagitem{Cultural programming}\hspace{4pt}\tagitem{Community practice}\hspace{4pt}\tagitem{Multimedia docs}\\[4pt]
+  \tagitem{Place-based research}\hspace{4pt}\tagitem{UAE}\hspace{4pt}\tagitem{MENASA}\\[4pt]
+  \tagitem{Public programs}\hspace{4pt}\tagitem{Portfolio}
+  \end{minipage}
+
+  &
+
+  % RIGHT COLUMN
+  \begin{minipage}[t]{\linewidth}
+  \rightcoltext
+  \section{Cultural Projects, Research \& Community Experience}
+
+  \entrytitle{Louvre Abu Dhabi \textbar\ Mondrian's Mirage - VR Installation}\\
+  \entrymeta{Abu Dhabi \textbar\ 2024}
+  \begin{itemize}
+    \item Created an immersive visitor experience translating painting-inspired composition into a walkable virtual environment.
+    \item Worked at the intersection of museum context, spatial storytelling, audience engagement, and digital interpretation.
+  \end{itemize}
+
+  \entrytitle{ArtsIT 2024 \textbar\ Event Operations \& Digital Documentation Support}\\
+  \entrymeta{Abu Dhabi \textbar\ 2024}
+  \begin{itemize}
+    \item Supported arts-and-technology event operations, photography, media management, and digital documentation.
+    \item Helped make public-facing cultural programming legible beyond the event through organized visual and media records.
+  \end{itemize}
+
+  \entrytitle{Swissnex \textbar\ Future of Rights of Nature}\\
+  \entrymeta{Global / UAE-linked sustainability diplomacy \textbar\ 2024}
+  \begin{itemize}
+    \item Placed top 10 globally in a project exploring environmental governance, Rights of Nature, and future cultural/legal imaginaries.
+    \item Combined research, public communication, systems thinking, and culturally sensitive environmental storytelling.
+  \end{itemize}
+
+  \entrytitle{NYUAD Black Box / La MaMa Studio \textbar\ XR \& Hybrid Performance Projects}\\
+  \entrymeta{Abu Dhabi / New York \textbar\ 2024-2025}
+  \begin{itemize}
+    \item Built live-digital performances using projection, motion capture, machine learning, sound, and audience interaction.
+    \item Collaborated across performers, technical systems, narrative themes, and public presentation constraints.
+  \end{itemize}
+
+  \entrytitle{NYU Housing \textbar\ Residential Assistant}\\
+  \entrymeta{Abu Dhabi \textbar\ Aug - Nov 2023; Aug 2025 - Present}
+  \begin{itemize}
+    \item Coordinate inclusive community programming, outreach, logistics, and student support across a diverse residential community.
+    \item Serve as a trusted first point of contact, connecting students with resources and maintaining cultural sensitivity and discretion.
+  \end{itemize}
+
+  \entrytitle{Interactive Media, NYU Abu Dhabi \textbar\ Machine Learning Research Assistant - ml5.js}\\
+  \entrymeta{Abu Dhabi \textbar\ Jan 2026 - Present}
+  \begin{itemize}
+    \item Develop accessible learning materials and creative coding experiments for artists, educators, and students.
+    \item Translate complex technology into participatory tools and explanations for non-specialist communities.
+  \end{itemize}
+
+  \section{Why Sharjah Architecture Triennial}
+  \begin{itemize}
+    \item \textbf{Programming fit:} strong alignment with SAT03 public programming needs across workshops, talks, screenings, performances, and community-facing activities.
+    \item \textbf{Public engagement practice:} proven coordination in outreach, participant communication, event logistics, documentation, and inclusive audience engagement in UAE cultural contexts.
+    \item \textbf{Institutional relevance:} interdisciplinary training and field experience translating research, place, and lived experience into accessible civic and cultural programming.
+  \end{itemize}
+
+  \end{minipage}
+
+  \end{tabular}}
+
+  \end{document}
